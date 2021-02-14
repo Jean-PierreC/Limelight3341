@@ -60,14 +60,9 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     //still need a way to distinguish in between
-    if (m_drive.getUltraDistance() >= 50 && m_drive.getUltraDistance() <= 70) {
-      m_autoCommand = new PathARed();
-    } else if (m_drive.getUltraDistance() >= 140 && m_drive.getUltraDistance() <= 160) {
-      m_autoCommand = new PathABlue();
-    } else {
-      m_autoCommand = new PathBBlue();
-    }
-    // An ExampleCommand will run in autonomous
-    return m_autoCommand;
+    
+    return new Align();
+    return new forwardAlign();
+    
   }
 }

@@ -56,7 +56,7 @@ public class Limelight {
 	public static int getV() {
 		return v;
 	}
-	public static double getX() {
+	public  double getX() {
 		return x;
 	}
 	public static double getY() {
@@ -66,6 +66,10 @@ public class Limelight {
 		return area;
 	}
 
+
+	public static void flash() {
+		table.getEntry("ledMode").setNumber(2);
+	}
     public double getDistance(){
         
          distance=(43.3*Math.pow(area, -.531));
