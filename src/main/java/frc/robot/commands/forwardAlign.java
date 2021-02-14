@@ -4,16 +4,17 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Limelight;
 import frc.robot.RobotContainer;
 
-public class forwardAlign extends SequentialCommandGroup {
+public class forwardAlign  extends CommandBase {
   /** Creates a new forwardAlign. */
   Limelight li = new Limelight();
   public forwardAlign() {
     // Use addRequirements() here to declare subsystem dependencies.
      
+    
 
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
