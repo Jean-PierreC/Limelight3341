@@ -3,28 +3,55 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands;
-
-import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Limelight;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
-
-public class forwardAlign  extends CommandBase {
+public class forwardAlign extends CommandBase {
+  Limelight li;
   /** Creates a new forwardAlign. */
-  Limelight li = new Limelight();
+  private double dist;
   public forwardAlign() {
     // Use addRequirements() here to declare subsystem dependencies.
-     
-    
-
-    // Add your commands in the addCommands() call, e.g.
-    // addCommands(new FooCommand(), new BarCommand());
-    double x = li.getX();
-    double distance = li.getDistance();
-    if(distance > 1){
-      RobotContainer.returnDrive().tankDrive(0.25 + x/100, 0.25 - x/100);
-    }
   }
 
-  
-  
+  // Called when the command is initially scheduled.
+  @Override
+  public void initialize() {
+    li = new Limelight();
+    dist = li.getDistance();
+  }
+
+  // Called every time the scheduler runs while the command is scheduled.
+  @Override
+  public void execute() {
+    dist = li.getDistance();
+    System.out.println("test: "+li.getDistance()); 
+    if(dist>10){
+    RobotContainer.returnDrive().tankDrive(-0.25, -.25);
+    System.out.println("MOVE");
+    }
+ 
+    //if(dist<10)
+    //RobotContainer.returnDrive().tankDrive(0,0);
+
+  }
+
+  // Called once the command ends or is interrupted.
+  @Override
+  public void end(boolean interrupted) {
+    RobotContainer.returnDrive().tankDrive(0, 0);
+
+  }
+
+  // Returns true when the command should end.
+  @Override
+  public boolean isFinished() {
+    if(dist<=10){
+      System.out.println("STOOOOP!");
+      RobotContainer.returnDrive().tankDrive(0,0);
+
+    return true;
+    }
+    return false;
+  }
 }

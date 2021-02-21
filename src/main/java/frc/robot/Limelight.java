@@ -63,6 +63,7 @@ public class Limelight {
 		return y;
 	}
 	public static double getArea() {
+		System.out.println("area:"+area);
 		return area;
 	}
 
@@ -73,7 +74,7 @@ public class Limelight {
     public double getDistance(){
         
          distance=(43.3*Math.pow(area, -.531));
-         System.out.println(area);
+         //System.out.println("Distance(Inches):"+distance);
         // System.out.println("distance: "+distance);
          return distance;
 	}

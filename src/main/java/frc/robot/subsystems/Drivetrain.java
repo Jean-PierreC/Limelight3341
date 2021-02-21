@@ -80,7 +80,8 @@ public class Drivetrain extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
     li.getDistance();
-    
+   // li.getArea();
+    //System.out.println("aa");
     tankDrive(RobotContainer.returnLeftJoy().getY(), RobotContainer.returnRightJoy().getY());
   }
 }

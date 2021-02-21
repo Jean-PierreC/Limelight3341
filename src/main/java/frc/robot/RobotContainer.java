@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.commands.Align;
 import edu.wpi.first.wpilibj.Joystick;
 
 /**
@@ -27,7 +26,8 @@ public class RobotContainer {
   private static Joystick leftJoy = new Joystick(Constants.leftJoy);
   private static Joystick rightJoy = new Joystick(Constants.rightJoy);
 
-  Align A = new Align();
+ // forwardAlign A = new forwardAlign();
+  AimFire A = new AimFire();
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
@@ -61,6 +61,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     //still need a way to distinguish in between
-    A.turn();
-    A.closer();
+    return A;
+}
 }
