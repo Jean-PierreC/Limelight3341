@@ -1,0 +1,9 @@
+[
+  {
+    "artifact": "frcJava (in project frc-3341-Robot-Skills-Challenge)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "frc-3341-Robot-Skills-Challenge",
+    "language": "java"
+  }
+]
